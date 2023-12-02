@@ -39,8 +39,9 @@ def obtener_informacion_proceso():
 
 # Funcion Main.
 def main():
-
-
-
-
+    if len(sys.argv) != 2:
+        print("Uso: python script.py <ID_del_proceso>")
+    else:
+        pid_proceso = int(sys.argv[1])    # Obtiene el ID del proceso desde los argumentos de la línea de comandos
+        obtener_informacion_proceso(pid_proceso)  # Llama a la función para obtener información del proceso
 main()
