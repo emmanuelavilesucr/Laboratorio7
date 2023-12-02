@@ -3,7 +3,7 @@ import sys
 
 # Esta funcion es encargada de obtener todos los datos relacionados al proceso. 
 def obtener_informacion_proceso():
-
+    try:
     proceso = psutil.Process(pid)   # Obtiene el objeto del proceso utilizando psutil
 
     # Las siguientes lineas se encargan de obtener la información del proceso
@@ -27,7 +27,13 @@ def obtener_informacion_proceso():
     print("g) Estado (status):", estado_proceso)
     print("h) Path del ejecutable:", path_ejecutable)
 
+    # Manejo de la excepción si el proceso no existe
+    except psutil.NoSuchProcess as e:
+        print(f"Error: No existe un proceso con el ID {pid}")
 
+    # Manejo de otras excepciones 
+    except Exception as e:
+        print(f"Error inesperado: {e}")
 
 
 
