@@ -11,7 +11,7 @@ class MonitorProceso:
 
     # Funcion encargada de llevar a cabo el proceso
     def ejecutar_proceso(self):
-       try:
+        try:
             subprocess.Popen(self.comando, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             print(f"Proceso {self.nombre_proceso} iniciado.")
         except Exception as e:
@@ -19,7 +19,7 @@ class MonitorProceso:
 
 
     # Funcion encargada de monitorear el proceso
-    def monitorear_proceso(self):
+    def monitorear(self):
 
         # Verifica si el proceso está en ejecución consultando la lista de procesos del sistema
         while True:
