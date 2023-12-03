@@ -4,7 +4,7 @@
 
 En este informe, se discutirán los resultados obtenidos mediante el monitoreo de procesos utilizando tres scripts en Python. Los códigos implementados utilizan las bibliotecas `psutil`, `subprocess`, `time`, `matplotlib`, y `datetime` para realizar tareas específicas relacionadas con el monitoreo de procesos.
 
-## Primer ejercicio:
+### Primer ejercicio:
 
 El primer script proporciona información detallada sobre un proceso dado a través de su ID. La función `obtener_informacion_proceso(pid)` utiliza la biblioteca `psutil` para obtener detalles como el nombre del proceso, ID del proceso, ID del proceso padre, usuario propietario, uso de CPU, consumo de memoria, estado del proceso y la ruta del ejecutable.
 
@@ -12,7 +12,7 @@ El primer script proporciona información detallada sobre un proceso dado a trav
 - La información detallada brindada por el script es útil para comprender el estado y comportamiento del proceso en ejecución.
 - Se proporciona manejo de excepciones para casos en los que el proceso no existe, lo cual mejora la robustez del script.
 
-## Segundo ejercicio:
+### Segundo ejercicio:
 
 El segundo script crea la clase `MonitorProceso`, que inicia un proceso y lo monitorea continuamente. Si el proceso se cierra, el script lo reinicia automáticamente.
 
@@ -20,7 +20,7 @@ El segundo script crea la clase `MonitorProceso`, que inicia un proceso y lo mon
 - La clase `MonitorProceso` demuestra un enfoque práctico para garantizar que un proceso específico se mantenga en ejecución.
 - El uso de `subprocess.Popen` para iniciar el proceso y el monitoreo continuo proporcionan una solución automatizada y resiliente.
 
-## Tercer ejercicio:
+### Tercer ejercicio:
 
 El tercer script utiliza la biblioteca `psutil` para monitorear el uso de CPU y memoria de un proceso durante un período específico. Luego, genera un gráfico y guarda los datos en un archivo de registro.
 
