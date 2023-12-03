@@ -23,8 +23,8 @@ class MonitorProceso:
 
         # Verifica si el proceso está en ejecución consultando la lista de procesos del sistema
         while True:
-            proceso_en_ejecucion = any(self.nombre_proceso in linea for linea in os.popen('tasklist'))
-            
+
+            proceso_en_ejecucion = any(self.nombre_proceso in linea for linea in os.popen(f'pgrep {self.nombre_proceso}'))            
             # Si el proceso se ha cerrado, imprime un mensaje y reinicia el proceso
             if not proceso_en_ejecucion:
                 print(f"¡Atención! El proceso {self.nombre_proceso} ha sido cerrado. Reiniciando...")
