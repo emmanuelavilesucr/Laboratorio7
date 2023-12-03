@@ -18,7 +18,6 @@ class MonitorProceso:
             print(f"Error al iniciar el proceso {self.nombre_proceso}: {e}")
 
 
-
     # Funcion encargada de monitorear el proceso
     def monitorear_proceso(self):
 
@@ -34,12 +33,17 @@ class MonitorProceso:
             time.sleep(5)  # Delay de 5 segundos
 
 
-
 # Funcion del main
 def main():
 
+    if len(sys.argv) != 3:
+        print("Uso: python script.py <nombre_proceso> <comando>")
+        sys.exit(1)
 
-
-
+    nombre_proceso = sys.argv[1]
+    comando = sys.argv[2]
+    monitor = MonitorProceso(nombre_proceso, comando)   
+    monitor.ejecutar_proceso()
+    monitor.monitorear()
 
 main()
